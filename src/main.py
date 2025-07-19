@@ -7,14 +7,14 @@ sys.path.insert(0, project_root)
 
 from flask import Flask, send_from_directory
 from flask_cors import CORS
-from models.user import db
-from models.admin import Admin
-from models.analytics import UserActivity, AffiliateClick, RoomScan, AppMetrics
-from models.product import Product
-from routes.user import user_bp
-from routes.auth import auth_bp
-from routes.analytics import analytics_bp
-from routes.products import products_bp
+from src.models.user import db
+from src.models.admin import Admin
+from src.models.analytics import UserActivity, AffiliateClick, RoomScan, AppMetrics
+from src.models.product import Product
+from src.routes.user import user_bp
+from src.routes.auth import auth_bp
+from src.routes.analytics import analytics_bp
+from src.routes.products import products_bp
 
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
 app.config['SECRET_KEY'] = 'roomscan-admin-secret-key-change-in-production'
